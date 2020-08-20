@@ -7,9 +7,9 @@ nBlock_Counter::nBlock_Counter(uint32_t auto_reset){
 	return;
 }
 
-void nBlock_Counter::triggerInput(uint32_t inputNumber, uint32_t value){
+void nBlock_Counter::triggerInput(nBlocks_Message message){
 	
-	if(inputNumber == COUNT_IN && value !=0){
+	if(message.inputNumber == COUNT_IN && message.intValue !=0){
 		
 		
 		_count++;
@@ -21,7 +21,7 @@ void nBlock_Counter::triggerInput(uint32_t inputNumber, uint32_t value){
 		
 		
 	}
-	else if(inputNumber == RESET){// reset may need to go in endframe
+	else if(message.inputNumber == RESET){// reset may need to go in endframe
 	
 	
 		reset_flag = 1;

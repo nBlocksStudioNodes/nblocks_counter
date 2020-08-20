@@ -18,7 +18,7 @@ public:
 	};
 	
     nBlock_Counter(uint32_t auto_reset);
-    void triggerInput(uint32_t inputNumber, uint32_t value);
+    void triggerInput(nBlocks_Message message);
 	void endFrame(void);
    
 private:
